@@ -7,8 +7,8 @@ from tkinter import ttk
 from tkcalendar import DateEntry
 from  datetime import date
 
-from controller.Controller import *
-from util.CadastroUtils import *
+from controller.controller import *
+from util.cadastro_utils import *
 
 global tree
 def consulta():
@@ -197,14 +197,15 @@ def consulta():
         
 
         def save():
-            # Apaga os dados e desabilita os campos
             # Atualiza o banco de dados
             updateData(id=id_entry.get(), nome=nome_entry.get(), cpf=cpf_entry.get(), data_nascimento=dateConvert(date=nascimento_cal.get()),
                        celular=celular_entry.get(), cep=cep_entry.get(), logradouro=logradouro_entry.get(), numero=num_entry.get(), 
                        complemento=complemento_entry.get(), bairro=bairro_entry.get(), cidade=cidade_entry.get(), uf=UF_entry.get(), 
                        pais=pais_entry.get())
-            print(f'{id_entry.get()}\n{nome_entry.get()}\n{cpf_entry.get()}\n{dateConvert(date=nascimento_cal.get())},\n{celular_entry.get()}\n{cep_entry.get()}\n{logradouro_entry.get()}\n{num_entry.get()},\n{complemento_entry.get()}\n{bairro_entry.get()}\n{cidade_entry.get()}\n{UF_entry.get()},\n{pais_entry.get()}')
+
+            # Apaga os dados e desabilita os campos
             cancel()
+
             # atualiza a tabela
             atualizarCadastro()
 
@@ -324,7 +325,7 @@ def consulta():
         pais_entry.place(x=535, y=147)
 
         # Celular
-        celular_label = tk.Label(second_frame, text="Celular:", font=("Arial", 10, "bold"), bg="lightgrey")
+        celular_label = tk.Label(second_frame, text="* Celular:", font=("Arial", 10, "bold"), bg="lightgrey")
         celular_entry = tk.Entry(second_frame, width=18)
         celular_label.place(x=619, y=125)
         celular_entry.place(x=619, y=147)

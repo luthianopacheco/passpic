@@ -1,9 +1,9 @@
 import tkinter as tk
 import awesometkinter as atk
 
-from view.Cadastro import register
-from view.Consulta import consulta
-from view.Reconhecimendo import ReconhecimentoFacial
+from view.cadastro_usuario import register
+from view.consulta_cadastro import consulta
+from view.reconhecimendo_facial import ReconhecimentoFacial
 
 
 # Janela principal

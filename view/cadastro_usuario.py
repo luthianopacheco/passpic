@@ -6,8 +6,8 @@ from tkinter import *
 from tkcalendar import DateEntry
 from datetime import date
 
-from controller.Controller import insertData
-from util.CadastroUtils import *
+from controller.controller import insertData
+from util.cadastro_utils import *
 
 # Tela de inserção de dados - Cadastro 
 def register():
@@ -112,7 +112,7 @@ def register():
         pais_entry.place(x=535, y=147)
 
         # Celular
-        celular_label = tk.Label(register_interface, text="Celular:", font=("Arial", 10, "bold"), bg="lightgrey")
+        celular_label = tk.Label(register_interface, text="* Celular:", font=("Arial", 10, "bold"), bg="lightgrey")
         celular_entry = tk.Entry(register_interface, width=18)
         celular_label.place(x=619, y=125)
         celular_entry.place(x=619, y=147)

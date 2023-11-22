@@ -1,4 +1,4 @@
-from persistencia.ConexaoDB import databaseConnection
+from persistencia.conexao_db import databaseConnection
 
 # Salvando dados no banco de dados
 def insertData(nome:str, cpf:str, data_nascimento:str, celular:str, user_image:str, 
@@ -101,8 +101,6 @@ def getDataById(id):
 def updateData(id, nome:str, cpf:str, data_nascimento:str, celular:str, 
                cep:str, logradouro:str, numero:str, complemento:str, bairro:str,
                cidade:str, uf:str, pais:str):
-    
-    print(f'{id}\n{nome}\n{cpf}\n{data_nascimento}\n{celular}\n{cep}\n{logradouro}\n{numero}\n{complemento}\n{bairro}\n{cidade}\n{uf}\n{pais}')
     try:
         connection = databaseConnection()
         cursor = connection.cursor()
@@ -149,7 +147,6 @@ def deleteData(id):
         
 
 # ------------------------------------------------------------------------------------------------------------- #
-
 
 # Teste get - OK
 # user, endereco = getData()

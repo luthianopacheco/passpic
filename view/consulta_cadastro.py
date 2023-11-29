@@ -6,6 +6,7 @@ from tkinter import *
 from tkinter import ttk
 from tkcalendar import DateEntry
 from  datetime import date
+from pathlib import Path
 
 from controller.controller import *
 from util.cadastro_utils import *
@@ -197,9 +198,22 @@ def consulta():
         
 
         def save():
+            # Renomeia arquivo da foto
+            data, e = getDataById(id=id_entry.get())
+            path = str(data[0][5])
+            pathSplit = path.split('/')
+            
+            desktopPath = os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop')
+            folderPath = os.path.join(desktopPath, "Fotos Data 'PassPic'")
+
+            oldPath = os.path.join(folderPath, pathSplit[5])
+            newPath = os.path.join(folderPath, nome_entry.get()+'.jpg')
+
+            os.rename(oldPath,newPath)
+            
             # Atualiza o banco de dados
             updateData(id=id_entry.get(), nome=nome_entry.get(), cpf=cpf_entry.get(), data_nascimento=dateConvert(date=nascimento_cal.get()),
-                       celular=celular_entry.get(), cep=cep_entry.get(), logradouro=logradouro_entry.get(), numero=num_entry.get(), 
+                       celular=celular_entry.get(), user_image=newPath.replace('\\','/'), cep=cep_entry.get(), logradouro=logradouro_entry.get(), numero=num_entry.get(), 
                        complemento=complemento_entry.get(), bairro=bairro_entry.get(), cidade=cidade_entry.get(), uf=UF_entry.get(), 
                        pais=pais_entry.get())
 

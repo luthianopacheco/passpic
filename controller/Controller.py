@@ -98,14 +98,14 @@ def getDataById(id):
 # ------------------------------------------------------------------------------------------------------------- #
 
 
-def updateData(id, nome:str, cpf:str, data_nascimento:str, celular:str, 
+def updateData(id, nome:str, cpf:str, data_nascimento:str, celular:str, user_image:str,
                cep:str, logradouro:str, numero:str, complemento:str, bairro:str,
                cidade:str, uf:str, pais:str):
     try:
         connection = databaseConnection()
         cursor = connection.cursor()
         
-        user_query = f'update user set nome="{nome}", cpf="{cpf}", data_nascimento="{data_nascimento}", celular="{celular}" where iduser={id};'
+        user_query = f'update user set nome="{nome}", cpf="{cpf}", data_nascimento="{data_nascimento}", celular="{celular}", user_image="{user_image}" where iduser={id};'
         endereco_query = f'update endereco set cep="{cep}", logradouro="{logradouro}", numero="{numero}", complemento="{complemento}", bairro="{bairro}", cidade="{cidade}", uf="{uf}", pais="{pais}" where idendereco={id};'
         cursor.execute(user_query)
         connection.commit()

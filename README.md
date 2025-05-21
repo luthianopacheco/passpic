@@ -1,5 +1,5 @@
 # 👁️‍🗨️ Reconhecimento Facial com Python
-Este projeto demonstra a implementação de um sistema básico de reconhecimento e cadastro facial utilizando Python. Foi desenvolvido como um desafio final do curso 
+Este projeto demonstra a implementação de um sistema básico de reconhecimento e cadastro facial utilizando Python. Foi desenvolvido em 2023 como um desafio final do curso 
 técnico em Desenvolvimento de Software do Senac Tech (que não abordava Python no curso), onde quis buscar um novo desafio e aprender um pouco da linguagem.
 
 ## 🌟 Recursos Principais
